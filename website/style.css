@@ -1,1090 +1,381 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-
-/* ================= RESET ================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
-    font-family: 'Inter', sans-serif;
-
-    background: #050505;
-
-    color: #ffffff;
-
-    overflow-x: hidden;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: hsl(159, 75%, 38%);
+    color: #eeeef3;
+    line-height: 1.6;
 }
-
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.025) 1px,
-            transparent 1px
-        );
-
-    background-size: 50px 50px;
-
-    pointer-events: none;
-
-    z-index: -1;
-
-}
-
-
-a {
-
-    color: inherit;
-
-    text-decoration: none;
-
-}
-
-
-
-/* ================= NAVBAR ================= */
 
 .navbar {
-
-    height: 80px;
-
-    padding: 0 7%;
-
+    width: 100%;
+    padding: 20px 7%;
     display: flex;
-
-    align-items: center;
-
     justify-content: space-between;
-
-    border-bottom: 1px solid
-        rgba(255,255,255,0.08);
-
-    background:
-        rgba(5,5,5,0.85);
-
-    backdrop-filter: blur(15px);
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 100;
-
-}
-
-
-.brand {
-
-    display: flex;
-
     align-items: center;
-
-    gap: 12px;
-
+    position: absolute;
+    top: 0;
+    z-index: 10;
 }
 
-
-.brand img {
-
-    width: 42px;
-
-    height: 42px;
-
-    object-fit: contain;
-
-}
-
-
-.brand span {
-
-    font-size: 20px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-}
-
-
-nav {
-
+.logo {
     display: flex;
-
-    gap: 35px;
-
-}
-
-
-nav a {
-
-    font-size: 12px;
-
-    color: #999;
-
-    transition: 0.3s;
-
-}
-
-
-nav a:hover {
-
-    color: #ffffff;
-
-}
-
-
-.nav-button {
-
-    background: #ffffff;
-
-    color: #050505;
-
-    padding: 14px 22px;
-
-    border-radius: 4px;
-
-    font-size: 11px;
-
+    align-items: center;
+    gap: 12px;
     font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s;
-
+    font-size: 22px;
 }
 
-
-.nav-button:hover {
-
-    transform: translateY(-3px);
-
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
 }
 
-
-
-/* ================= HERO ================= */
+.nav-btn {
+    color: rgb(243, 4, 16);
+    text-decoration: none;
+    border: 1px solid #ea2727;
+    padding: 9px 18px;
+    border-radius: 30px;
+}
 
 .hero {
-
-    min-height: 720px;
-
-    padding: 100px 7%;
+    min-height: 100vh;
 
     display: flex;
-
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    justify-content: space-between;
+    text-align: center;
 
-    gap: 60px;
+    padding: 100px 20px 60px;
 
+    background:
+        radial-gradient(
+            circle at center,
+            #e00e0e 0%,
+            #b52626 55%
+        );
 }
 
+.hero-logo img {
+    width: 150px;
+    height: 150px;
 
-.hero-content {
+    border-radius: 50%;
 
-    max-width: 700px;
+    margin-bottom: 25px;
 
+    box-shadow:
+        0 0 70px rgba(255,255,255,.12);
 }
 
-
-.badge {
-
-    display: inline-block;
-
-    padding: 9px 15px;
-
-    border: 1px solid #333;
-
-    border-radius: 50px;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 30px;
-
-    color: #bbb;
-
+.badge,
+.section-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #ef0909;
+    margin-bottom: 18px;
 }
 
-
-h1 {
-
-    font-size: clamp(
-        65px,
-        9vw,
-        125px
-    );
-
-    line-height: 0.85;
-
+.hero h1 {
+    font-size: clamp(70px, 15vw, 150px);
+    line-height: .9;
     letter-spacing: -7px;
-
-    font-weight: 900;
-
 }
 
-
-h1 span,
-h2 span {
-
-    display: block;
-
-    color: transparent;
-
-    -webkit-text-stroke:
-        1px #ffffff;
-
+.hero h2 {
+    margin-top: 20px;
+    font-size: clamp(30px, 5vw, 55px);
 }
 
-
-.hero-content p {
-
-    margin-top: 35px;
-
-    max-width: 500px;
-
-    color: #999;
-
-    line-height: 1.8;
-
-    font-size: 16px;
-
+.tagline {
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
+.intro {
+    max-width: 650px;
+    color: #aaa;
+    margin-top: 20px;
+}
 
-.hero-buttons {
-
+.buttons {
     display: flex;
-
     gap: 15px;
 
     margin-top: 35px;
 
     flex-wrap: wrap;
-
-}
-
-
-.primary-button {
-
-    background: #ffffff;
-
-    color: #050505;
-
-    padding: 14px 22px;
-
-    border-radius: 4px;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s;
-
-}
-
-
-.primary-button:hover {
-
-    transform: translateY(-3px);
-
-}
-
-
-.secondary-button {
-
-    border: 1px solid #444;
-
-    padding: 14px 22px;
-
-    border-radius: 4px;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s;
-
-}
-
-
-.secondary-button:hover {
-
-    background: #ffffff;
-
-    color: #000000;
-
-}
-
-
-
-/* ================= HERO LOGO ================= */
-
-.hero-logo {
-
-    position: relative;
-
-    width: 430px;
-
-    height: 430px;
-
-    display: flex;
-
     justify-content: center;
-
-    align-items: center;
-
 }
 
+.buttons a {
+    text-decoration: none;
 
-.hero-logo img {
+    padding: 14px 25px;
 
-    position: relative;
+    border-radius: 30px;
 
-    width: 330px;
-
-    height: 330px;
-
-    object-fit: contain;
-
-    z-index: 2;
-
-    animation:
-        float 5s ease-in-out infinite;
-
-    filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,255,255,0.18)
-        );
-
+    font-weight: bold;
 }
 
-
-.logo-glow {
-
-    position: absolute;
-
-    width: 320px;
-
-    height: 320px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    filter: blur(60px);
-
+.primary {
+    background: white;
+    color: black;
 }
 
-
-.floating-text {
-
-    position: absolute;
-
-    bottom: 10px;
-
-    right: 0;
-
-    border: 1px solid #333;
-
-    padding: 10px 16px;
-
-    font-weight: 800;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    background: #080808;
-
+.secondary {
+    border: 1px solid #f7f2f2;
+    color: white;
 }
 
+.token-section,
+.vision {
+    padding: 110px 7%;
 
-@keyframes float {
+    max-width: 1100px;
 
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-15px);
-
-    }
-
+    margin: auto;
 }
 
+.token-section h2,
+.vision h2 {
+    font-size: clamp(40px, 6vw, 70px);
 
-
-/* ================= MARQUEE ================= */
-
-.marquee {
-
-    overflow: hidden;
-
-    border-top: 1px solid #222;
-
-    border-bottom: 1px solid #222;
-
-    padding: 20px 0;
-
-    white-space: nowrap;
-
+    margin-bottom: 45px;
 }
-
-
-.marquee div {
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-    animation:
-        marquee 20s linear infinite;
-
-}
-
-
-@keyframes marquee {
-
-    from {
-
-        transform:
-            translateX(0);
-
-    }
-
-    to {
-
-        transform:
-            translateX(-50%);
-
-    }
-
-}
-
-
-
-/* ================= SECTIONS ================= */
-
-.section {
-
-    padding: 140px 7%;
-
-}
-
-
-.section-label {
-
-    font-size: 10px;
-
-    color: #777;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 30px;
-
-}
-
-
-h2 {
-
-    font-size: clamp(
-        50px,
-        7vw,
-        95px
-    );
-
-    line-height: 0.9;
-
-    letter-spacing: -5px;
-
-    font-weight: 900;
-
-}
-
-
-.section-description {
-
-    max-width: 650px;
-
-    color: #888;
-
-    line-height: 1.9;
-
-    margin-top: 40px;
-
-    font-size: 16px;
-
-}
-
-
-
-/* ================= CARDS ================= */
-
-.cards {
-
-    margin-top: 70px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-}
-
-
-.card {
-
-    padding: 35px;
-
-    min-height: 260px;
-
-    border: 1px solid #222;
-
-    background: #080808;
-
-    transition: 0.3s;
-
-}
-
-
-.card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color: #555;
-
-}
-
-
-.card-icon {
-
-    font-size: 35px;
-
-    margin-bottom: 40px;
-
-}
-
-
-.card h3 {
-
-    font-size: 15px;
-
-    letter-spacing: 1px;
-
-}
-
-
-.card p {
-
-    color: #777;
-
-    line-height: 1.7;
-
-    font-size: 13px;
-
-    margin-top: 15px;
-
-}
-
-
-
-/* ================= TOKENOMICS ================= */
-
-.token-section {
-
-    background: #080808;
-
-    border-top: 1px solid #222;
-
-    border-bottom: 1px solid #222;
-
-}
-
 
 .token-grid {
-
-    margin-top: 70px;
-
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.card {
+    background: #111;
 
     border: 1px solid #222;
 
+    padding: 30px;
+
+    border-radius: 20px;
 }
 
-
-.token-main {
-
-    padding: 35px;
-
-    border-right: 1px solid #222;
-
-}
-
-
-.token-main:last-child {
-
-    border-right: none;
-
-}
-
-
-.token-main span {
-
+.card span {
     display: block;
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 18px;
-
-}
-
-
-.token-main strong {
-
-    font-size: 19px;
-
-}
-
-
-
-/* ================= CONTRACT ================= */
-
-.contract-box {
-
-    margin-top: 20px;
-
-    border: 1px solid #222;
-
-    padding: 25px;
-
-}
-
-
-.contract-box > span {
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.contract-box > div {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-top: 15px;
-
-    gap: 20px;
-
-}
-
-
-code {
-
-    color: #aaa;
-
-    font-family: monospace;
-
-}
-
-
-.contract-box button {
-
-    border: 1px solid #444;
-
-    background: transparent;
-
-    color: white;
-
-    padding: 9px 15px;
-
-    cursor: pointer;
-
-}
-
-
-
-/* ================= ROADMAP ================= */
-
-.roadmap {
-
-    margin-top: 70px;
-
-    max-width: 900px;
-
-}
-
-
-.roadmap-item {
-
-    display: flex;
-
-    gap: 30px;
-
-    padding: 30px 0;
-
-    border-bottom: 1px solid #222;
-
-}
-
-
-.number {
-
-    font-size: 12px;
-
-    color: #666;
-
-    min-width: 40px;
-
-}
-
-
-.roadmap-item h3 {
-
-    font-size: 16px;
-
-}
-
-
-.roadmap-item p {
-
-    color: #777;
-
-    margin-top: 10px;
-
-    font-size: 13px;
-
-}
-
-
-
-/* ================= COMMUNITY ================= */
-
-.community {
-
-    min-height: 650px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    border-top: 1px solid #222;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #151515 0%,
-            #050505 60%
-        );
-
-}
-
-
-.community-content {
-
-    padding: 50px 20px;
-
-}
-
-
-.community h2 {
-
-    font-size:
-        clamp(
-            55px,
-            9vw,
-            120px
-        );
-
-}
-
-
-.community p {
-
-    color: #777;
-
-    margin-top: 30px;
-
-}
-
-
-
-/* ================= FOOTER ================= */
-
-footer {
-
-    padding: 40px 7%;
-
-    border-top: 1px solid #222;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-}
-
-
-.footer-brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-}
-
-
-.footer-brand img {
-
-    width: 42px;
-
-    height: 42px;
-
-    object-fit: contain;
-
-}
-
-
-.footer-brand strong {
-
-    letter-spacing: 2px;
-
-}
-
-
-footer p {
-
-    color: #555;
 
     font-size: 11px;
 
+    letter-spacing: 2px;
+
+    color: #fdf9f9;
+
+    margin-bottom: 10px;
 }
 
+.card strong {
+    font-size: 25px;
+}
 
+.wide {
+    grid-column: 1 / -1;
+}
 
-/* ================= TABLET ================= */
+code {
+    display: block;
 
-@media (max-width: 900px) {
+    background: #080808;
 
-    nav {
+    padding: 15px;
 
-        display: none;
+    border-radius: 10px;
 
-    }
+    color: #aaa;
 
+    word-break: break-all;
 
-    .hero {
+    margin: 15px 0;
+}
 
-        flex-direction: column;
+button {
+    border: none;
 
-        text-align: center;
+    background: white;
 
-        padding-top: 80px;
+    color: rgb(162, 166, 162);
 
-    }
+    padding: 10px 18px;
 
+    border-radius: 20px;
 
-    .hero-content {
+    cursor: pointer;
 
-        display: flex;
+    font-weight: bold;
+}
 
-        flex-direction: column;
+.vision {
+    text-align: center;
+}
 
-        align-items: center;
+.vision p:last-child {
+    max-width: 600px;
 
-    }
+    margin: auto;
 
+    color: #ede4e4;
+}
 
-    h1 {
+footer {
+    border-top: 1px solid #ed0808;
 
-        font-size: 70px;
+    padding: 30px 7%;
 
-        letter-spacing: -4px;
+    display: flex;
 
-    }
+    justify-content: space-between;
 
+    color: #e00707;
 
-    .hero-logo {
+    font-size: 13px;
+}
 
-        width: 330px;
-
-        height: 330px;
-
-    }
-
-
-    .hero-logo img {
-
-        width: 260px;
-
-        height: 260px;
-
-    }
-
-
-    .cards {
-
-        grid-template-columns: 1fr;
-
-    }
-
+@media (max-width: 700px) {
 
     .token-grid {
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns: 1fr;
     }
 
-
-    .token-main {
-
-        border-bottom:
-            1px solid #222;
-
+    .wide {
+        grid-column: auto;
     }
-
 
     footer {
-
         flex-direction: column;
-
-        gap: 20px;
-
+        gap: 10px;
     }
 
 }
+.tokenomics {
+    padding: 110px 7%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
 
+.tokenomics h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin-bottom: 20px;
+}
 
+.tokenomics-intro {
+    color: #111112;
+    max-width: 600px;
+    margin: 0 auto 45px;
+}
 
-/* ================= MOBILE ================= */
+.tokenomics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
 
-@media (max-width: 500px) {
+.allocation {
+    background: #111;
+    border: 1px solid #e9f0f1;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+}
 
-    .navbar {
+.allocation span {
+    display: block;
+    color: #e9e0e0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
 
-        padding: 0 5%;
+.allocation strong {
+    display: block;
+    font-size: 42px;
+}
 
-    }
+.allocation small {
+    color: #ee1008;
+}
 
+@media (max-width: 700px) {
 
-    .nav-button {
-
-        display: none;
-
-    }
-
-
-    .hero {
-
-        padding-left: 5%;
-
-        padding-right: 5%;
-
-    }
-
-
-    h1 {
-
-        font-size: 55px;
-
-    }
-
-
-    .section {
-
-        padding: 100px 5%;
-
-    }
-
-
-    .token-grid {
-
+    .tokenomics-grid {
         grid-template-columns: 1fr;
-
     }
 
+}
+.roadmap {
+    padding: 110px 7%;
+    max-width: 1100px;
+    margin: auto;
+}
 
-    .token-main {
+.roadmap h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin-bottom: 50px;
+}
 
-        border-right: none;
+.roadmap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
-    }
+.roadmap-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
 
+    padding: 30px;
 
-    .contract-box > div {
+    background: #0f100f;
+    border: 1px solid #b50808;
+    border-radius: 20px;
+}
 
-        flex-direction: column;
+.roadmap-item > span {
+    font-size: 35px;
+    font-weight: 800;
+    color: #ebe7e8;
+}
 
-        align-items: flex-start;
+.roadmap-item h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
 
+.roadmap-item p {
+    color: #f1ebeb;
+    max-width: 650px;
+}
+
+@media (max-width: 700px) {
+
+    .roadmap-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
 }
