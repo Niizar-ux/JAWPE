@@ -1,0 +1,4 @@
+token/node_modules/
+token/devnet-wallet.json
+token/.env
+node_modules/
