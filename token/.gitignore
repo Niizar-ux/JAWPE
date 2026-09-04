@@ -1,3 +1,5 @@
 node_modules/
 devnet-wallet.json
+devnet-wallet.backup.json
 .env
+receiver-devnet.json

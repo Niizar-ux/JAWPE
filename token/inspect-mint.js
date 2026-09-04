@@ -9,7 +9,7 @@ const {
 } = require("@solana/spl-token");
 
 const MINT_ADDRESS =
-    "5gZFtvwZqFWGk4K1FpwUUSVgaNQYDYbTetfthirKU7R";
+    "5fuTCXiggJAhBfD8jnZfnSNRxVecMHMrBP6T6YoqyeW7";
 
 async function main() {
 
